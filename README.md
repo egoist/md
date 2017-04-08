@@ -8,7 +8,7 @@
 **Why?**
 
 - Actively maintained
-- Rewrote in ES6 and bundled with Rollup for smaller size
+- Rewrote in ES6 and bundled with Rollup for smaller size (15KB)
 - Support more GFM extras like [task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
 
 ## Install
@@ -24,7 +24,7 @@ You can find a CDN version at https://unpkg.com/mmark/
 ```js
 const mmark = require('mmark')
 
-mmark(`## hello world
+const html = mmark(`## hello world
 
 A modern **markdown** parser!
 
@@ -32,6 +32,8 @@ A modern **markdown** parser!
 - [x] done
 `)
 ```
+
+You can preview the HTML result here: https://egoistian.com/md2html/ ([source](https://github.com/egoist/md2html))
 
 ## API
 
