@@ -1,0 +1,57 @@
+{
+  "name": "mmark",
+  "version": "0.0.0",
+  "description": "Modern markdown parser.",
+  "repository": {
+    "url": "egoist/mmark",
+    "type": "git"
+  },
+  "main": "dist/mmark.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test:cov": "jest --coverage && npm run lint",
+    "test": "jest && npm run lint && npm run build",
+    "lint": "xo src/*.js",
+    "fix": "xo src/*.js --fix",
+    "build": "bili --format umd --compress"
+  },
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "es2015"
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.3.3",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.24.1",
+    "bili": "^0.14.0",
+    "eslint-config-rem": "^3.0.0",
+    "jest-cli": "^18.1.0",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "extends": "rem",
+    "esnext": true,
+    "envs": [
+      "jest"
+    ],
+    "rules": {
+      "complexity": 0,
+      "no-cond-assign": 0,
+      "no-unexpected-multiline": 0,
+      "func-call-spacing": 0,
+      "no-useless-escape": 0
+    }
+  }
+}
