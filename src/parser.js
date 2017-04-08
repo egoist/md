@@ -33,6 +33,8 @@ export default class Parser {
       out += this.tok()
     }
 
+    // Remove cached headings
+    this.renderer._headings = []
     return out
   }
 
