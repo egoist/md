@@ -6,7 +6,9 @@
     "url": "egoist/mmark",
     "type": "git"
   },
-  "main": "dist/mmark.js",
+  "main": "dist/mmark.common.js",
+  "unpkg": "dist/mmark.js",
+  "module": "dist/mmark.es.js",
   "files": [
     "dist"
   ],
@@ -15,7 +17,7 @@
     "test": "jest && npm run lint && npm run build",
     "lint": "xo src/*.js",
     "fix": "xo src/*.js --fix",
-    "build": "bili --format umd --compress"
+    "build": "bili --format umd --format cjs --format es --compress"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
