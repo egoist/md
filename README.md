@@ -17,6 +17,8 @@
 yarn add mmark
 ```
 
+You can find a CDN version at https://unpkg.com/mmark/
+
 ## Usage
 
 ```js
