@@ -1,6 +1,9 @@
+import { slugify } from './utils'
+
 export default class Renderer {
   constructor(options) {
     this.options = options || {}
+    this._headings = []
   }
 
   code(code, lang, escaped) {
@@ -28,7 +31,13 @@ export default class Renderer {
   }
 
   heading(text, level, raw) {
-    return `<h${level} id="${this.options.headerPrefix}${raw.toLowerCase().replace(/[^\w]+/g, '-')}">${text}</h${level}>\n`
+    let slug = slugify(raw)
+    const count = this._headings.filter(h => h === raw).length
+    if (count > 0) {
+      slug += `-${count}`
+    }
+    this._headings.push(raw)
+    return `<h${level} id="${this.options.headerPrefix}${slug}">${text}</h${level}>\n`
   }
 
   hr() {
