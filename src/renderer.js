@@ -1,4 +1,4 @@
-import { slugify } from './utils'
+import { slugify, unescape } from './utils'
 
 export default class Renderer {
   constructor(options) {
