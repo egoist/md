@@ -46,7 +46,7 @@ Input markdown string.
 
 #### options
 
-All marked [options](https://github.com/chjj/marked#highlight) plus:
+All marked [options](https://github.com/chjj/marked#options-1) plus:
 
 ##### taskLists
 
