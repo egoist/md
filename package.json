@@ -1,14 +1,14 @@
 {
-  "name": "marked2",
+  "name": "marked3",
   "version": "0.2.0",
   "description": "A markdown parser and compiler. Built for speed.",
   "repository": {
-    "url": "egoist/marked2",
+    "url": "egoist/marked3",
     "type": "git"
   },
-  "main": "dist/marked2.common.js",
-  "unpkg": "dist/marked2.js",
-  "module": "dist/marked2.es.js",
+  "main": "dist/marked3.common.js",
+  "unpkg": "dist/marked3.js",
+  "module": "dist/marked3.es.js",
   "files": [
     "dist"
   ],

@@ -1,6 +1,6 @@
-# marked2
+# marked3
 
-[![NPM version](https://img.shields.io/npm/v/marked2.svg?style=flat)](https://npmjs.com/package/marked2) [![NPM downloads](https://img.shields.io/npm/dm/marked2.svg?style=flat)](https://npmjs.com/package/marked2) [![Build Status](https://img.shields.io/circleci/project/egoist/marked2/master.svg?style=flat)](https://circleci.com/gh/egoist/marked2) [![codecov](https://codecov.io/gh/egoist/marked2/branch/master/graph/badge.svg)](https://codecov.io/gh/egoist/marked2)
+[![NPM version](https://img.shields.io/npm/v/marked3.svg?style=flat)](https://npmjs.com/package/marked3) [![NPM downloads](https://img.shields.io/npm/dm/marked3.svg?style=flat)](https://npmjs.com/package/marked3) [![Build Status](https://img.shields.io/circleci/project/egoist/marked3/master.svg?style=flat)](https://circleci.com/gh/egoist/marked3) [![codecov](https://codecov.io/gh/egoist/marked3/branch/master/graph/badge.svg)](https://codecov.io/gh/egoist/marked3)
  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
 > This is a fork of [marked](https://github.com/chjj/marked)
@@ -14,17 +14,17 @@
 ## Install
 
 ```bash
-yarn add marked2
+yarn add marked3
 ```
 
-You can find a CDN version at https://unpkg.com/marked2/
+You can find a CDN version at https://unpkg.com/marked3/
 
 ## Usage
 
 ```js
-const marked2 = require('marked2')
+const marked3 = require('marked3')
 
-const html = marked2(`## hello world
+const html = marked3(`## hello world
 
 A modern **markdown** parser!
 
@@ -37,7 +37,7 @@ You can preview the HTML result here: https://egoistian.com/md2html/ ([source](h
 
 ## API
 
-### marked2(src, [options])
+### marked3(src, [options])
 
 #### src
 
@@ -68,7 +68,7 @@ Enable GFM task lists, this will only work if `options.gfm` is `true`.
 
 ## Author
 
-**marked2** © [egoist](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
-Authored and maintained by egoist with help from contributors ([list](https://github.com/egoist/marked2/contributors)).
+**marked3** © [egoist](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by egoist with help from contributors ([list](https://github.com/egoist/marked3/contributors)).
 
 > [egoistian.com](https://egoistian.com) · GitHub [@egoist](https://github.com/egoist) · Twitter [@rem_rin_rin](https://twitter.com/rem_rin_rin)
