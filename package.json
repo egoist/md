@@ -1,14 +1,14 @@
 {
-  "name": "mmark",
+  "name": "marked2",
   "version": "0.1.4",
-  "description": "Modern markdown parser.",
+  "description": "A markdown parser and compiler. Built for speed.",
   "repository": {
-    "url": "egoist/mmark",
+    "url": "egoist/marked2",
     "type": "git"
   },
-  "main": "dist/mmark.common.js",
-  "unpkg": "dist/mmark.js",
-  "module": "dist/mmark.es.js",
+  "main": "dist/marked2.common.js",
+  "unpkg": "dist/marked2.js",
+  "module": "dist/marked2.es.js",
   "files": [
     "dist"
   ],
