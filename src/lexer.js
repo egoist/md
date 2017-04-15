@@ -8,8 +8,8 @@ class Lexer {
     this.options = options
 
     if (this.options.gfm) {
-      if (this.options.table) {
-        this.rules = blockRules.table
+      if (this.options.tables) {
+        this.rules = blockRules.tables
       } else {
         this.rules = blockRules.gfm
       }

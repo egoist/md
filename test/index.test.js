@@ -13,4 +13,10 @@ describe('renderer', () => {
     const expected = await fs.readFile('./fixtures/headings.html', 'utf8')
     expect(actual).toBe(expected)
   })
+
+  it('render table', async () => {
+    const actual = marked3(await fs.readFile('./fixtures/table.md', 'utf8'))
+    const expected = await fs.readFile('./fixtures/table.html', 'utf8')
+    expect(actual).toBe(expected)
+  })
 })
