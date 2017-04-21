@@ -1,4 +1,5 @@
-import { slugify, escape, unescape } from './utils'
+import slugo from 'slugo'
+import { escape, unescape } from './utils'
 
 export default class Renderer {
   constructor(options) {
@@ -31,7 +32,7 @@ export default class Renderer {
   }
 
   heading(text, level, raw) {
-    let slug = slugify(raw)
+    let slug = slugo(raw)
     const count = this._headings.filter(h => h === raw).length
     if (count > 0) {
       slug += `-${count}`

@@ -66,5 +66,8 @@
       "func-call-spacing": 0,
       "no-useless-escape": 0
     }
+  },
+  "dependencies": {
+    "slugo": "^0.2.1"
   }
 }
