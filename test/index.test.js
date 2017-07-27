@@ -1,22 +1,38 @@
-import fs from 'mz/fs'
-import marked3 from '../src'
+import test from 'ava'
+import marked from '../src'
 
-process.chdir(__dirname)
+test('headings', t => {
+  const html = marked(`
+# hello
 
-test('main', () => {
-  expect(typeof marked3).toBe('function')
+# hello
+
+## hi there
+  `)
+
+  t.snapshot(html)
 })
 
-describe('renderer', () => {
-  it('render headings', async () => {
-    const actual = marked3(await fs.readFile('./fixtures/headings.md', 'utf8'))
-    const expected = await fs.readFile('./fixtures/headings.html', 'utf8')
-    expect(actual).toBe(expected)
-  })
+test('table', t => {
+  const html = marked(`
+|foo|bar|
+|---|---|
+|foo|bar|
+  `)
 
-  it('render table', async () => {
-    const actual = marked3(await fs.readFile('./fixtures/table.md', 'utf8'))
-    const expected = await fs.readFile('./fixtures/table.html', 'utf8')
-    expect(actual).toBe(expected)
-  })
+  t.snapshot(html)
+})
+
+test('links', t => {
+  const html = marked(`
+[a](b)
+`)
+
+  t.snapshot(html)
+
+  const html2 = marked(`
+[a](b)
+  `, { linksInNewTab: true })
+
+  t.snapshot(html2)
 })

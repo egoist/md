@@ -123,6 +123,9 @@ export default class Renderer {
     if (title) {
       out += ` title="${title}"`
     }
+    if (this.options.linksInNewTab) {
+      out += ` target="_blank"`
+    }
     out += `>${text}</a>`
     return out
   }
