@@ -30,9 +30,12 @@ test('links', t => {
 
   t.snapshot(html)
 
-  const html2 = marked(`
+  const html2 = marked(
+    `
 [a](b)
-  `, { linksInNewTab: true })
+  `,
+    { linksInNewTab: true }
+  )
 
   t.snapshot(html2)
 })

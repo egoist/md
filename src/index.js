@@ -12,9 +12,11 @@ function marked3(src, opt) {
   } catch (err) {
     err.message += '\nPlease report this to https://github.com/egoist/marked3.'
     if ((opt || defaultOptions).silent) {
-      return '<p>An error occurred:</p><pre>' +
+      return (
+        '<p>An error occurred:</p><pre>' +
         escape(String(err.message), true) +
         '</pre>'
+      )
     }
     throw err
   }

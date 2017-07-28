@@ -48,7 +48,7 @@ class Lexer {
 
     while (src) {
       // newline
-      if (cap = this.rules.newline.exec(src)) {
+      if ((cap = this.rules.newline.exec(src))) {
         src = src.substring(cap[0].length)
         if (cap[0].length > 1) {
           this.tokens.push({
@@ -58,20 +58,18 @@ class Lexer {
       }
 
       // code
-      if (cap = this.rules.code.exec(src)) {
+      if ((cap = this.rules.code.exec(src))) {
         src = src.substring(cap[0].length)
         cap = cap[0].replace(/^ {4}/gm, '')
         this.tokens.push({
           type: 'code',
-          text: this.options.pedantic ?
-            cap :
-            cap.replace(/\n+$/, '')
+          text: this.options.pedantic ? cap : cap.replace(/\n+$/, '')
         })
         continue
       }
 
       // fences (gfm)
-      if (cap = this.rules.fences.exec(src)) {
+      if ((cap = this.rules.fences.exec(src))) {
         src = src.substring(cap[0].length)
         this.tokens.push({
           type: 'code',
@@ -82,7 +80,7 @@ class Lexer {
       }
 
       // heading
-      if (cap = this.rules.heading.exec(src)) {
+      if ((cap = this.rules.heading.exec(src))) {
         src = src.substring(cap[0].length)
         this.tokens.push({
           type: 'heading',
@@ -125,7 +123,7 @@ class Lexer {
       }
 
       // lheading
-      if (cap = this.rules.lheading.exec(src)) {
+      if ((cap = this.rules.lheading.exec(src))) {
         src = src.substring(cap[0].length)
         this.tokens.push({
           type: 'heading',
@@ -136,7 +134,7 @@ class Lexer {
       }
 
       // hr
-      if (cap = this.rules.hr.exec(src)) {
+      if ((cap = this.rules.hr.exec(src))) {
         src = src.substring(cap[0].length)
         this.tokens.push({
           type: 'hr'
@@ -145,7 +143,7 @@ class Lexer {
       }
 
       // blockquote
-      if (cap = this.rules.blockquote.exec(src)) {
+      if ((cap = this.rules.blockquote.exec(src))) {
         src = src.substring(cap[0].length)
 
         this.tokens.push({
@@ -167,7 +165,7 @@ class Lexer {
       }
 
       // list
-      if (cap = this.rules.list.exec(src)) {
+      if ((cap = this.rules.list.exec(src))) {
         src = src.substring(cap[0].length)
         bull = cap[2]
 
@@ -206,9 +204,9 @@ class Lexer {
           // list item contains. Hacky.
           if (item.indexOf('\n ') !== -1) {
             space -= item.length
-            item = this.options.pedantic ?
-              item.replace(/^ {1,4}/gm, '') :
-              item.replace(new RegExp('^ {1,' + space + '}', 'gm'), '')
+            item = this.options.pedantic
+              ? item.replace(/^ {1,4}/gm, '')
+              : item.replace(new RegExp('^ {1,' + space + '}', 'gm'), '')
           }
 
           // Determine whether the next list item belongs here.
@@ -232,9 +230,7 @@ class Lexer {
 
           this.tokens.push({
             checked,
-            type: loose ?
-              'loose_item_start' :
-              'list_item_start'
+            type: loose ? 'loose_item_start' : 'list_item_start'
           })
 
           // Recurse.
@@ -253,13 +249,12 @@ class Lexer {
       }
 
       // html
-      if (cap = this.rules.html.exec(src)) {
+      if ((cap = this.rules.html.exec(src))) {
         src = src.substring(cap[0].length)
         this.tokens.push({
-          type: this.options.sanitize ?
-            'paragraph' :
-            'html',
-          pre: !this.options.sanitizer &&
+          type: this.options.sanitize ? 'paragraph' : 'html',
+          pre:
+            !this.options.sanitizer &&
             (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
           text: cap[0]
         })
@@ -267,7 +262,7 @@ class Lexer {
       }
 
       // def
-      if ((!bq && top) && (cap = this.rules.def.exec(src))) {
+      if (!bq && top && (cap = this.rules.def.exec(src))) {
         src = src.substring(cap[0].length)
         this.tokens.links[cap[1].toLowerCase()] = {
           href: cap[2],
@@ -315,15 +310,16 @@ class Lexer {
         src = src.substring(cap[0].length)
         this.tokens.push({
           type: 'paragraph',
-          text: cap[1].charAt(cap[1].length - 1) === '\n' ?
-            cap[1].slice(0, -1) :
-            cap[1]
+          text:
+            cap[1].charAt(cap[1].length - 1) === '\n'
+              ? cap[1].slice(0, -1)
+              : cap[1]
         })
         continue
       }
 
       // text
-      if (cap = this.rules.text.exec(src)) {
+      if ((cap = this.rules.text.exec(src))) {
         // Top-level should never reach here.
         src = src.substring(cap[0].length)
         this.tokens.push({
@@ -334,8 +330,7 @@ class Lexer {
       }
 
       if (src) {
-        throw new
-          Error('Infinite loop on byte: ' + src.charCodeAt(0))
+        throw new Error('Infinite loop on byte: ' + src.charCodeAt(0))
       }
     }
 

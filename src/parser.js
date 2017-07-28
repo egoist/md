@@ -85,12 +85,15 @@ export default class Parser {
         return this.renderer.heading(
           this.inline.output(this.token.text),
           this.token.depth,
-          this.token.text)
+          this.token.text
+        )
       }
       case 'code': {
-        return this.renderer.code(this.token.text,
+        return this.renderer.code(
+          this.token.text,
           this.token.lang,
-          this.token.escaped)
+          this.token.escaped
+        )
       }
       case 'table': {
         let header = ''
@@ -115,10 +118,10 @@ export default class Parser {
 
           cell = ''
           for (j = 0; j < row.length; j++) {
-            cell += this.renderer.tablecell(
-              this.inline.output(row[j]),
-              { header: false, align: this.token.align[j] }
-            )
+            cell += this.renderer.tablecell(this.inline.output(row[j]), {
+              header: false,
+              align: this.token.align[j]
+            })
           }
 
           body += this.renderer.tablerow(cell)
@@ -153,9 +156,7 @@ export default class Parser {
         const checked = this.token.checked
 
         while (this.next().type !== 'list_item_end') {
-          body += this.token.type === 'text' ?
-            this.parseText() :
-            this.tok()
+          body += this.token.type === 'text' ? this.parseText() : this.tok()
         }
 
         return this.renderer.listitem(body, checked)
@@ -171,9 +172,10 @@ export default class Parser {
         return this.renderer.listitem(body, checked)
       }
       case 'html': {
-        const html = !this.token.pre && !this.options.pedantic ?
-          this.inline.output(this.token.text) :
-          this.token.text
+        const html =
+          !this.token.pre && !this.options.pedantic
+            ? this.inline.output(this.token.text)
+            : this.token.text
         return this.renderer.html(html)
       }
       case 'paragraph': {

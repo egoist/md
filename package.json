@@ -15,8 +15,7 @@
   "scripts": {
     "test": "npm run lint && ava",
     "prepublish": "npm run build",
-    "lint": "xo src/*.js",
-    "fix": "xo src/*.js --fix",
+    "lint": "xo",
     "build": "bili --format umd,cjs,es,umdCompress"
   },
   "author": "egoist <0x142857@gmail.com>",
@@ -53,7 +52,7 @@
     ]
   },
   "xo": {
-    "extends": "rem",
+    "extends": "rem/prettier",
     "rules": {
       "complexity": 0,
       "no-cond-assign": 0,

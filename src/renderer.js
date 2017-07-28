@@ -20,7 +20,10 @@ export default class Renderer {
       return `<pre><code>${escaped ? code : escape(code, true)}\n</code></pre>`
     }
 
-    return `<pre><code class="${this.options.langPrefix}${escape(lang, true)}">${escaped ? code : escape(code, true)}\n</code></pre>\n`
+    return `<pre><code class="${this.options.langPrefix}${escape(
+      lang,
+      true
+    )}">${escaped ? code : escape(code, true)}\n</code></pre>\n`
   }
 
   blockquote(quote) {
@@ -38,7 +41,8 @@ export default class Renderer {
       slug += `-${count}`
     }
     this._headings.push(raw)
-    return `<h${level} id="${this.options.headerPrefix}${slug}">${text}</h${level}>\n`
+    return `<h${level} id="${this.options
+      .headerPrefix}${slug}">${text}</h${level}>\n`
   }
 
   hr() {
@@ -56,12 +60,14 @@ export default class Renderer {
       return `<li>${text}</li>\n`
     }
 
-    return '<li class="task-list-item">' +
-     '<input type="checkbox" class="task-list-item-checkbox"' +
-     (checked ? ' checked' : '') +
-     '> ' +
-     text +
-     '</li>\n'
+    return (
+      '<li class="task-list-item">' +
+      '<input type="checkbox" class="task-list-item-checkbox"' +
+      (checked ? ' checked' : '') +
+      '> ' +
+      text +
+      '</li>\n'
+    )
   }
 
   paragraph(text) {
@@ -78,9 +84,9 @@ export default class Renderer {
 
   tablecell(content, flags) {
     const type = flags.header ? 'th' : 'td'
-    const tag = flags.align ?
-      `<${type} style="text-align:${flags.align}">` :
-      `<${type}>`
+    const tag = flags.align
+      ? `<${type} style="text-align:${flags.align}">`
+      : `<${type}>`
     return `${tag + content}</${type}>\n`
   }
 
@@ -115,7 +121,13 @@ export default class Renderer {
       } catch (err) {
         return ''
       }
-      if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0 || prot.indexOf('data:') === 0) { // eslint-disable-line no-script-url
+      if (
+        // eslint-disable-next-line no-script-url
+        prot.indexOf('javascript:') === 0 ||
+        prot.indexOf('vbscript:') === 0 ||
+        prot.indexOf('data:') === 0
+      ) {
+        // eslint-disable-line no-script-url
         return ''
       }
     }
