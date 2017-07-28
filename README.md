@@ -73,6 +73,19 @@ Open links in a new window/tab.
 5. Submit a pull request :D
 
 
+## Development
+
+```bash
+# lint and unit test
+yarn test
+
+# lint only
+yarn lint
+
+# fix lint issues
+yarn lint -- --fix
+```
+
 ## Author
 
 **marked3** © [egoist](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
