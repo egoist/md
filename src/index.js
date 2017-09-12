@@ -1,4 +1,4 @@
-import { merge } from './utils'
+import { merge, escape } from './utils'
 import defaultOptions from './defaults'
 import Parser from './parser'
 import Lexer from './lexer'
