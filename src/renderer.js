@@ -135,7 +135,7 @@ export default class Renderer {
     if (title) {
       out += ` title="${title}"`
     }
-    if (this.options.linksInNewTab) {
+    if (this.options.linksInNewTab && href[0] !== '#') {
       out += ` target="_blank"`
     }
     out += `>${text}</a>`
