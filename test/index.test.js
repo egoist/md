@@ -38,4 +38,22 @@ test('links', t => {
   )
 
   t.snapshot(html2)
+
+  const html3 = marked(
+    `
+[a](b)
+  `,
+    { linksInNewTab: () => true }
+  )
+
+  t.snapshot(html3)
+
+  const html4 = marked(
+    `
+[a](b)
+  `,
+    { linksInNewTab: () => false }
+  )
+
+  t.snapshot(html4)
 })

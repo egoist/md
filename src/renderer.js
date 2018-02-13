@@ -135,7 +135,11 @@ export default class Renderer {
     if (title) {
       out += ` title="${title}"`
     }
-    if (this.options.linksInNewTab) {
+    const { linksInNewTab } = this.options
+    const targetBlank =
+      linksInNewTab === true ||
+      (typeof linksInNewTab === 'function' && linksInNewTab(href))
+    if (targetBlank) {
       out += ` target="_blank"`
     }
     out += `>${text}</a>`
