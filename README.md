@@ -59,7 +59,7 @@ Enable GFM task lists, this will only work if `options.gfm` is `true`.
 
 ##### linksInNewTab
 
-Type: `boolean`<br>
+Type: `boolean | (href: string) => boolean`<br>
 Default: `undefined`
 
 Open links in a new window/tab.
