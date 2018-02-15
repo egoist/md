@@ -33,7 +33,7 @@ A modern **markdown** parser!
 `)
 ```
 
-You can preview the HTML result here: https://egoistian.com/md2html/ ([source](https://github.com/egoist/md2html))
+You can preview the HTML result here: https://egoist.moe/md2html/ ([source](https://github.com/egoist/md2html))
 
 ## API
 
