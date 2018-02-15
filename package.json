@@ -6,7 +6,7 @@
     "url": "egoist/marked3",
     "type": "git"
   },
-  "main": "dist/marked3.common.js",
+  "main": "dist/marked3.cjs.js",
   "unpkg": "dist/marked3.js",
   "module": "dist/marked3.es.js",
   "files": [
@@ -14,9 +14,9 @@
   ],
   "scripts": {
     "test": "npm run lint && ava",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "lint": "xo",
-    "build": "bili --format umd,cjs,es,umdCompress"
+    "build": "bili --format umd,cjs,es,umd-min"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.24.1",
-    "bili": "^0.17.4",
+    "bili": "^2.2.7",
     "eslint-config-rem": "^3.1.0",
     "mz": "^2.6.0",
     "xo": "^0.18.2"
