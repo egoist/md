@@ -1,6 +1,6 @@
-# marked3
+# md
 
-[![NPM version](https://img.shields.io/npm/v/marked3.svg?style=flat)](https://npmjs.com/package/marked3) [![NPM downloads](https://img.shields.io/npm/dm/marked3.svg?style=flat)](https://npmjs.com/package/marked3) [![Build Status](https://img.shields.io/circleci/project/egoist/marked3/master.svg?style=flat)](https://circleci.com/gh/egoist/marked3) [![codecov](https://codecov.io/gh/egoist/marked3/branch/master/graph/badge.svg)](https://codecov.io/gh/egoist/marked3)
+[![NPM version](https://img.shields.io/npm/v/md.svg?style=flat)](https://npmjs.com/package/md) [![NPM downloads](https://img.shields.io/npm/dm/md.svg?style=flat)](https://npmjs.com/package/md) [![Build Status](https://img.shields.io/circleci/project/egoist/md/master.svg?style=flat)](https://circleci.com/gh/egoist/md) [![codecov](https://codecov.io/gh/egoist/md/branch/master/graph/badge.svg)](https://codecov.io/gh/egoist/md)
  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
 > This is a fork of [marked](https://github.com/chjj/marked)
@@ -14,17 +14,17 @@
 ## Install
 
 ```bash
-yarn add marked3
+yarn add md
 ```
 
-You can find a CDN version at https://unpkg.com/marked3/
+You can find a CDN version at https://unpkg.com/md/
 
 ## Usage
 
 ```js
-const marked3 = require('marked3')
+const md = require('md')
 
-const html = marked3(`## hello world
+const html = md(`## hello world
 
 A modern **markdown** parser!
 
@@ -37,7 +37,7 @@ You can preview the HTML result here: https://egoist.moe/md2html/ ([source](http
 
 ## API
 
-### marked3(src, [options])
+### md(src, [options])
 
 #### src
 
@@ -107,7 +107,7 @@ yarn lint -- --fix
 
 ## Author
 
-**marked3** © [egoist](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
-Authored and maintained by egoist with help from contributors ([list](https://github.com/egoist/marked3/contributors)).
+**md** © [egoist](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by egoist with help from contributors ([list](https://github.com/egoist/md/contributors)).
 
 > [egoist.moe](https://egoist.moe) · GitHub [@egoist](https://github.com/egoist) · Twitter [@_egoistlily](https://twitter.com/_egoistlily)

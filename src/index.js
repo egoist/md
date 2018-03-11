@@ -5,12 +5,12 @@ import Lexer from './lexer'
 import Renderer from './renderer'
 import InlineLexer from './inline-lexer'
 
-function marked3(src, opt) {
+function md(src, opt) {
   try {
     if (opt) opt = merge({}, defaultOptions, opt)
     return Parser.parse(Lexer.lex(src, opt), opt)
   } catch (err) {
-    err.message += '\nPlease report this to https://github.com/egoist/marked3.'
+    err.message += '\nPlease report this to https://github.com/egoist/md.'
     if ((opt || defaultOptions).silent) {
       return (
         '<p>An error occurred:</p><pre>' +
@@ -22,9 +22,9 @@ function marked3(src, opt) {
   }
 }
 
-marked3.Renderer = Renderer
-marked3.Parser = Parser
-marked3.Lexer = Lexer
-marked3.InlineLexer = InlineLexer
+md.Renderer = Renderer
+md.Parser = Parser
+md.Lexer = Lexer
+md.InlineLexer = InlineLexer
 
-export default marked3
+export default md
