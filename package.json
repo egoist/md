@@ -1,6 +1,6 @@
 {
   "name": "md",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "A markdown parser and compiler. Built for speed.",
   "repository": {
     "url": "egoist/md",
