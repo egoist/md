@@ -42,6 +42,7 @@
   },
   "xo": {
     "extends": "rem/prettier",
+    "envs": ["jest"],
     "rules": {
       "complexity": 0,
       "no-cond-assign": 0,
