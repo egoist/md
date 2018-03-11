@@ -1,7 +1,6 @@
-import test from 'ava'
 import marked from '../src'
 
-test('headings', t => {
+test('headings', () => {
   const html = marked(`
 # hello
 
@@ -10,25 +9,25 @@ test('headings', t => {
 ## hi there
   `)
 
-  t.snapshot(html)
+  expect(html).toMatchSnapshot()
 })
 
-test('table', t => {
+test('table', () => {
   const html = marked(`
 |foo|bar|
 |---|---|
 |foo|bar|
   `)
 
-  t.snapshot(html)
+  expect(html).toMatchSnapshot()
 })
 
-test('links', t => {
+test('links', () => {
   const html = marked(`
 [a](b)
 `)
 
-  t.snapshot(html)
+  expect(html).toMatchSnapshot()
 
   const html2 = marked(
     `
@@ -37,7 +36,7 @@ test('links', t => {
     { linksInNewTab: true }
   )
 
-  t.snapshot(html2)
+  expect(html2).toMatchSnapshot()
 
   const html3 = marked(
     `
@@ -46,7 +45,7 @@ test('links', t => {
     { linksInNewTab: () => true }
   )
 
-  t.snapshot(html3)
+  expect(html3).toMatchSnapshot()
 
   const html4 = marked(
     `
@@ -55,10 +54,10 @@ test('links', t => {
     { linksInNewTab: () => false }
   )
 
-  t.snapshot(html4)
+  expect(html4).toMatchSnapshot()
 })
 
-test('data-line', t => {
+test('data-line', () => {
   const html = marked(`
 \`\`\`js{1,2,3,5-10}
 hi
@@ -69,5 +68,5 @@ hello
 \`\`\`
 `)
 
-  t.snapshot(html)
+  expect(html).toMatchSnapshot()
 })

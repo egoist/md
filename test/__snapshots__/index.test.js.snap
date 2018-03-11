@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`data-line 1`] = `
+"<pre data-line=\\"1,2,3,5-10\\"><code class=\\"lang-js\\">hi
+</code></pre>
+<pre><code class=\\"lang-css\\">hello
+</code></pre>
+"
+`;
+
+exports[`headings 1`] = `
+"<h1 id=\\"hello\\">hello</h1>
+<h1 id=\\"hello-1\\">hello</h1>
+<h2 id=\\"hi-there\\">hi there</h2>
+"
+`;
+
+exports[`links 1`] = `
+"<p><a href=\\"b\\">a</a></p>
+"
+`;
+
+exports[`links 2`] = `
+"<p><a href=\\"b\\" target=\\"_blank\\">a</a></p>
+"
+`;
+
+exports[`links 3`] = `
+"<p><a href=\\"b\\" target=\\"_blank\\">a</a></p>
+"
+`;
+
+exports[`links 4`] = `
+"<p><a href=\\"b\\">a</a></p>
+"
+`;
+
+exports[`table 1`] = `
+"<table>
+<thead>
+<tr>
+<th>foo</th>
+<th>bar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td>bar</td>
+</tr>
+</tbody>
+</table>
+"
+`;
