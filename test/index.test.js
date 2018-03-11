@@ -57,3 +57,17 @@ test('links', t => {
 
   t.snapshot(html4)
 })
+
+test('data-line', t => {
+  const html = marked(`
+\`\`\`js{1,2,3,5-10}
+hi
+\`\`\`
+
+\`\`\`css
+hello
+\`\`\`
+`)
+
+  t.snapshot(html)
+})

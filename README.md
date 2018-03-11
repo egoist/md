@@ -64,6 +64,25 @@ Default: `undefined`
 
 Open links in a new window/tab.
 
+##### dataLine
+
+Type: `boolean`<br>
+Default: `true`
+
+Add `data-line` attribute to `<pre>` tag for code fences, it's useful with the [line-highlight](http://prismjs.com/plugins/line-highlight/) plugin in PrismJS. 
+
+````markdown
+```js{1}
+console.log('hi')
+```
+````
+
+This will yield:
+
+```html
+<pre data-line="1"><code class="lang-js">console.log('hi')</code></pre>
+```
+
 ## Contributing
 
 1. Fork it!

@@ -1,6 +1,8 @@
 import slugo from 'slugo'
 import { escape, unescape } from './utils'
 
+const highlightLinesRe = /{([\d,-]+)}/
+
 export default class Renderer {
   constructor(options) {
     this.options = options || {}
@@ -8,6 +10,12 @@ export default class Renderer {
   }
 
   code(code, lang, escaped) {
+    let dataLine = ''
+    if (this.options.dataLine && lang && highlightLinesRe.test(lang)) {
+      dataLine = ` data-line="${highlightLinesRe.exec(lang)[1]}"`
+      lang = lang.substr(0, lang.indexOf('{'))
+    }
+
     if (this.options.highlight) {
       const out = this.options.highlight(code, lang)
       if (out !== null && out !== code) {
@@ -17,10 +25,12 @@ export default class Renderer {
     }
 
     if (!lang) {
-      return `<pre><code>${escaped ? code : escape(code, true)}\n</code></pre>`
+      return `<pre${dataLine}><code>${escaped
+        ? code
+        : escape(code, true)}\n</code></pre>`
     }
 
-    return `<pre><code class="${this.options.langPrefix}${escape(
+    return `<pre${dataLine}><code class="${this.options.langPrefix}${escape(
       lang,
       true
     )}">${escaped ? code : escape(code, true)}\n</code></pre>\n`

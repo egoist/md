@@ -4,6 +4,7 @@ export default {
   gfm: true,
   tables: true,
   taskLists: true,
+  dataLine: true,
   breaks: false,
   pedantic: false,
   sanitize: false,
