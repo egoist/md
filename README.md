@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/md.svg?style=flat)](https://npmjs.com/package/md) [![NPM downloads](https://img.shields.io/npm/dm/md.svg?style=flat)](https://npmjs.com/package/md) [![Build Status](https://img.shields.io/circleci/project/egoist/md/master.svg?style=flat)](https://circleci.com/gh/egoist/md) [![codecov](https://codecov.io/gh/egoist/md/branch/master/graph/badge.svg)](https://codecov.io/gh/egoist/md)
  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
-> This is a fork of [marked](https://github.com/chjj/marked)
+> This is a fork of [marked](https://github.com/markedjs/marked)
 
 **Why?**
 
@@ -48,7 +48,7 @@ Input markdown string.
 
 #### options
 
-All marked [options](https://github.com/chjj/marked#options-1) plus:
+All marked [options](https://marked.js.org/#/USING_ADVANCED.md) plus:
 
 ##### taskLists
 
