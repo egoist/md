@@ -33,7 +33,7 @@ A modern **markdown** parser!
 `)
 ```
 
-You can preview the HTML result here: https://egoist.moe/md2html/ ([source](https://github.com/egoist/md2html))
+You can preview the HTML result here: https://md2html.egoist.rocks/ ([source](https://github.com/egoist/md2html))
 
 ## API
 
@@ -95,6 +95,9 @@ This will yield:
 ## Development
 
 ```bash
+# install the dependencies
+yarn # or yarn install
+
 # lint and unit test
 yarn test
 
@@ -102,7 +105,7 @@ yarn test
 yarn lint
 
 # fix lint issues
-yarn lint -- --fix
+yarn lint --fix
 ```
 
 ## Author

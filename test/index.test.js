@@ -70,3 +70,13 @@ hello
 
   expect(html).toMatchSnapshot()
 })
+
+test('inline-code', () => {
+  const html = marked(`
+Paragraph with \`some inline code\`.
+  `,
+    { codeSpanHighlighted: true }
+  )
+
+  expect(html).toMatchSnapshot()
+})

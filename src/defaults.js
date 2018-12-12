@@ -17,5 +17,6 @@ export default {
   smartypants: false,
   headerPrefix: '',
   renderer: new Renderer(),
-  xhtml: false
+  xhtml: false,
+  codeSpanHighlighted: false
 }
