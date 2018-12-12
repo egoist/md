@@ -112,7 +112,8 @@ export default class Renderer {
   codespan(text) {
     if (this.options.codeSpanHighlighted) {
       const defaultInlineLanguage = 'markup'
-      return `<code class="${this.options.langPrefix}${defaultInlineLanguage}">${text}</code>`
+      return `<code class="${this.options
+        .langPrefix}${defaultInlineLanguage}">${text}</code>`
     }
     return `<code>${text}</code>`
   }

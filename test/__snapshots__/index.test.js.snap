@@ -8,6 +8,11 @@ exports[`data-line 1`] = `
 "
 `;
 
+exports[`default inline code 1`] = `
+"<p>Paragraph with <code>some inline code</code>.</p>
+"
+`;
+
 exports[`headings 1`] = `
 "<h1 id=\\"hello\\">hello</h1>
 <h1 id=\\"hello-1\\">hello</h1>
@@ -15,7 +20,7 @@ exports[`headings 1`] = `
 "
 `;
 
-exports[`inline-code 1`] = `
+exports[`inline code with classes 1`] = `
 "<p>Paragraph with <code class=\\"lang-markup\\">some inline code</code>.</p>
 "
 `;

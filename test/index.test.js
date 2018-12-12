@@ -71,12 +71,21 @@ hello
   expect(html).toMatchSnapshot()
 })
 
-test('inline-code', () => {
-  const html = marked(`
+test('inline code with classes', () => {
+  const html = marked(
+    `
 Paragraph with \`some inline code\`.
   `,
     { codeSpanHighlighted: true }
   )
+
+  expect(html).toMatchSnapshot()
+})
+
+test('default inline code', () => {
+  const html = marked(`
+Paragraph with \`some inline code\`.
+  `)
 
   expect(html).toMatchSnapshot()
 })
