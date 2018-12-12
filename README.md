@@ -69,7 +69,7 @@ Open links in a new window/tab.
 Type: `boolean`<br>
 Default: `true`
 
-Add `data-line` attribute to `<pre>` tag for code fences, it's useful with the [line-highlight](http://prismjs.com/plugins/line-highlight/) plugin in PrismJS. 
+Add `data-line` attribute to `<pre>` tag for code fences, it's useful with the [line-highlight](http://prismjs.com/plugins/line-highlight/) plugin in PrismJS.
 
 ````markdown
 ```js{1}
@@ -81,6 +81,24 @@ This will yield:
 
 ```html
 <pre data-line="1"><code class="lang-js">console.log('hi')</code></pre>
+```
+
+##### codeSpanHighlighted
+
+Type: `boolean`<br>
+Default: `false`
+
+Adds default class `lang-markup` to inline `<code>` elements, so they will be automatically highlighted with PrismJS.
+The `lang-` prefix is configured by the default [options](https://marked.js.org/#/USING_ADVANCED.md#options) of Marked.js.
+
+````markdown
+paragraph with code: `console.log('hi')`.
+````
+
+This will yield:
+
+```html
+<p>paragraph with code: <code class="lang-markup">console.log('hi')</code>.</p>
 ```
 
 ## Contributing
